@@ -64,11 +64,19 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="__assets\__fonts\fontawesome-webfont.eot" />
+    <Content Include="__assets\__fonts\fontawesome-webfont.ttf" />
+    <Content Include="__assets\__fonts\fontawesome-webfont.woff" />
+    <Content Include="__assets\__fonts\fontawesome-webfont.woff2" />
+    <Content Include="__assets\__fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="__assets\__css\bootstrap.min.css" />
+    <Content Include="__assets\__css\font-awesome.min.css" />
+    <Content Include="__assets\__fonts\fontawesome-webfont.svg" />
     <Content Include="__assets\__js\bootstrap.min.js" />
+    <Content Include="__assets\__js\jquery-2.2.2.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
