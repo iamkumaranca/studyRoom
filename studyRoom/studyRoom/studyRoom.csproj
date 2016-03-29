@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="__assets\__css\bootstrap.min.css" />
+    <Content Include="__assets\__js\bootstrap.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,9 +81,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="__assets\__css\" />
     <Folder Include="__assets\__images\" />
-    <Folder Include="__assets\__js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
