@@ -57,6 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\studyRoom.ldf">
+      <DependentUpon>studyRoom.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\studyRoom.mdf" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
