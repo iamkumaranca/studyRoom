@@ -61,28 +61,96 @@
       <DependentUpon>studyRoom.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\studyRoom.mdf" />
+    <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
     <Content Include="Site1.Master" />
+    <Content Include="index.aspx" />
+    <Content Include="book.aspx" />
+    <Content Include="bookings.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="about.aspx" />
+    <Content Include="help.aspx" />
+    <Content Include="__assets\__css\animate.min.css" />
+    <Content Include="__assets\__css\bootstrap.min.css" />
+    <Content Include="__assets\__css\custom.css" />
+    <Content Include="__assets\__fonts\css\font-awesome.css" />
+    <Content Include="__assets\__fonts\css\font-awesome.min.css" />
+    <Content Include="__assets\__fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="__assets\__fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="__assets\__images\1.png" />
+    <Content Include="__assets\__images\4.jpg" />
+    <Content Include="__assets\__images\american-express.png" />
+    <Content Include="__assets\__images\back_disabled.png" />
+    <Content Include="__assets\__images\back_enabled.png" />
+    <Content Include="__assets\__images\back_enabled_hover.png" />
+    <Content Include="__assets\__images\data.png" />
+    <Content Include="__assets\__images\favicon.ico" />
+    <Content Include="__assets\__images\forward_disabled.png" />
+    <Content Include="__assets\__images\forward_enabled.png" />
+    <Content Include="__assets\__images\forward_enabled_hover.png" />
+    <Content Include="__assets\__images\icons.png" />
+    <Content Include="__assets\__images\img.jpg" />
+    <Content Include="__assets\__images\loading.gif" />
+    <Content Include="__assets\__images\mastercard.png" />
+    <Content Include="__assets\__images\paypal2.png" />
+    <Content Include="__assets\__images\picture-2.jpg" />
+    <Content Include="__assets\__images\picture.jpg" />
+    <Content Include="__assets\__images\picture2.jpg" />
+    <Content Include="__assets\__images\prod1.jpg" />
+    <Content Include="__assets\__images\prod2.jpg" />
+    <Content Include="__assets\__images\prod3.jpg" />
+    <Content Include="__assets\__images\prod4.jpg" />
+    <Content Include="__assets\__images\prod5.jpg" />
+    <Content Include="__assets\__images\sprite-skin-flat.png" />
+    <Content Include="__assets\__images\sprite-skin-modern.png" />
+    <Content Include="__assets\__images\sprite-skin-nice.png" />
+    <Content Include="__assets\__images\sprite-skin-simple.png" />
+    <Content Include="__assets\__images\user.png" />
+    <Content Include="__assets\__images\visa.png" />
+    <Content Include="__assets\__js\bootstrap.min.js" />
+    <Content Include="__assets\__js\custom.js" />
+    <Content Include="__assets\__js\icheck\icheck.min.js" />
+    <Content Include="__assets\__js\jquery.min.js" />
+    <Content Include="__assets\__js\moment\moment.min.js" />
+    <Content Include="__assets\__js\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="__assets\__js\nprogress.js" />
+    <Content Include="__assets\__js\pace\pace.min.js" />
+    <Content Include="__assets\__js\progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="__assets\__less\custom.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="__assets\__fonts\fontawesome-webfont.eot" />
-    <Content Include="__assets\__fonts\fontawesome-webfont.ttf" />
-    <Content Include="__assets\__fonts\fontawesome-webfont.woff" />
-    <Content Include="__assets\__fonts\fontawesome-webfont.woff2" />
-    <Content Include="__assets\__fonts\FontAwesome.otf" />
+    <Content Include="__assets\__fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="__assets\__fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="__assets\__fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="__assets\__fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="__assets\__fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="__assets\__fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="__assets\__fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="__assets\__fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="__assets\__fonts\fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="__assets\__css\bootstrap.min.css" />
-    <Content Include="__assets\__css\font-awesome.min.css" />
-    <Content Include="__assets\__fonts\fontawesome-webfont.svg" />
-    <Content Include="__assets\__js\bootstrap.min.js" />
-    <Content Include="__assets\__js\jquery-2.2.2.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -91,10 +159,50 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="book.aspx.cs">
+      <DependentUpon>book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="book.aspx.designer.cs">
+      <DependentUpon>book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bookings.aspx.cs">
+      <DependentUpon>bookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookings.aspx.designer.cs">
+      <DependentUpon>bookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help.aspx.designer.cs">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="__assets\__images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
