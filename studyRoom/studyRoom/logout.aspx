@@ -1,16 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="logout.aspx.cs" Inherits="studyRoom.logout" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head runat="server">
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
-    </div>
+        <!-- PAGE CODE GOES HERE -->
     </form>
 </body>
 </html>

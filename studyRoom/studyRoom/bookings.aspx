@@ -2,9 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="right_col" role="main">
-        <div class="row">
-            <!-- PAGE CODE GOES HERE -->
-        </div>
-        <br />
+    <!-- PAGE CODE GOES HERE -->
 </asp:Content>
