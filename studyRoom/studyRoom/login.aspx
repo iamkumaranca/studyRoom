@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="studyRoom.login" %>
 
 <!DOCTYPE html>
-<html lang "en">
+<html lang = "en">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -44,98 +44,67 @@
         <div id="wrapper">
             <div id="login" class="animate form">
                 <section class="login_content">
-                    <form>
-                        <h1>Login Form</h1>
-                        <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
-                        </div><br />
-                        <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
-                        </div><br />
-                        <div>
-                            <button class="btn btn-default submit">Log in</button>
-                        </div>
-                        <div>
-                            <a class="reset_pass" href="#topassword">Lost your password?</a>
-                        </div>
+                    <h1>Login Form</h1>
+                    <div runat="server" id="loginError"></div>
+                    <div>
+                        <input type="email" id="emailLogin" class="form-control" placeholder="Email" runat="server" />
+                    </div><br />
+                    <div>
+                        <input type="password" id="passwordLogin" class="form-control" placeholder="Password" runat="server" />
+                    </div><br />
+                    <div>
+                        <asp:Button ID="loginBtn" runat="server" CssClass="btn btn-default submit" Text="Log in" OnClick="loginBtn_Click" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
+                        <p class="change_link">New to site?
+                            <a href="#toregister" class="to_register"> Create Account </a>
+                        </p>
                         <div class="clearfix"></div>
-                        <div class="separator">
-                            <p class="change_link">New to site?
-                                <a href="#toregister" class="to_register"> Create Account </a>
-                            </p>
-                            <div class="clearfix"></div>
-                            <br />
-                            <div>
-                                <h1><i class="fa fa-rocket" style="font-size: 26px;"></i> TheForce.io</h1>
-                                <p>©2016 All Rights Reserved. TheForce.io!</p>
-                            </div>
+                        <br />
+                        <div>
+                            <h1><i class="fa fa-rocket" style="font-size: 26px;"></i> TheForce.io</h1>
+                            <p>©2016 All Rights Reserved. TheForce.io!</p>
                         </div>
-                    </form> <!-- form -->
+                    </div>
                 </section> <!-- content -->
             </div>
             <div id="register" class="animate form">
                 <section class="login_content">
-                    <form>
-                        <h1>Create Account</h1>
-                        <div>
-                            <input type="text" class="form-control" placeholder="First Name" required="" />
-                        </div>
-                        <div>
-                            <input type="text" class="form-control" placeholder="Last Name" required="" />
-                        </div>
-                        <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
-                        </div>
-                        <div>
-                            <input type="text" class="form-control" placeholder="Phone" required="" />
-                        </div>
-                        <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
-                        </div>
-                        <div>
-                            <input type="password" class="form-control" placeholder="Confirm Password" required="" />
-                        </div>
-                        <div>
-                            <button class="btn btn-default submit">Register</button>
-                        </div>
+                    <h1>Create Account</h1>
+                    <div>
+                        <input type="text" id="fName" class="form-control" placeholder="First Name" runat="server" />
+                    </div>
+                    <div>
+                        <input type="text" id="lName" class="form-control" placeholder="Last Name" runat="server" />
+                    </div>
+                    <div>
+                        <input type="email" id="emailReg" class="form-control" placeholder="Email" runat="server" />
+                    </div>
+                    <div>
+                        <input type="text" id="phone" class="form-control" placeholder="Phone" runat="server" />
+                    </div>
+                    <div>
+                        <input type="password" id="passwordReg" class="form-control" placeholder="Password" runat="server" />
+                    </div>
+                    <div>
+                        <input type="password" id="passwordConfirm" class="form-control" placeholder="Confirm Password" runat="server" />
+                    </div>
+                    <div>
+                        <button class="btn btn-default submit" id="registerBtn">Register</button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
+                        <p class="change_link">Already a member?
+                            <a href="#tologin" class="to_register"> Log in </a>
+                        </p>
                         <div class="clearfix"></div>
-                        <div class="separator">
-                            <p class="change_link">Already a member?
-                                <a href="#tologin" class="to_register"> Log in </a>
-                            </p>
-                            <div class="clearfix"></div>
-                            <br />
-                            <div>
-                                <h1><i class="fa fa-rocket" style="font-size: 26px;"></i> TheForce.io</h1>
-                                <p>©2016 All Rights Reserved. TheForce.io!</p>
-                            </div>
-                        </div>
-                    </form> <!-- form -->
-                </section> <!-- content -->
-            </div>
-            <div id="password" class="animate form">
-                <section class="login_content">
-                    <form>
-                        <h1>Reset Password</h1>
+                        <br />
                         <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
+                            <h1><i class="fa fa-rocket" style="font-size: 26px;"></i> TheForce.io</h1>
+                            <p>©2016 All Rights Reserved. TheForce.io!</p>
                         </div>
-                        <div>
-                            <button class="btn btn-default submit">Reset Password</button>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="separator">
-                            <p class="change_link">Already a member?
-                                <a href="#tologin" class="to_register"> Log in </a>
-                            </p>
-                            <div class="clearfix"></div>
-                            <br />
-                            <div>
-                                <h1><i class="fa fa-rocket" style="font-size: 26px;"></i> TheForce.io</h1>
-                                <p>©2016 All Rights Reserved. TheForce.io!</p>
-                            </div>
-                        </div>
-                    </form> <!-- form -->
+                    </div>
                 </section> <!-- content -->
             </div>
         </div>
