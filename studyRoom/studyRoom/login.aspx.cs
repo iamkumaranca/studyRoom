@@ -31,7 +31,7 @@ namespace studyRoom
         {
             studyRoomCN.Open();
             userTable.Clear();
-            string sql = "SELECT userID, email, password FROM users";
+            string sql = "SELECT userID, email, saltHash, password FROM users";
             using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
             {
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -58,7 +58,10 @@ namespace studyRoom
                 if(userTable.Rows[i][1].ToString() == email)
                 {
                     emailValid = true;
-                    if(userTable.Rows[i][2].ToString() == password)
+                    Response.Write("<script>alert('Email VALID');</script>");
+                    String salt = userTable.Rows[i][2].ToString();
+                    String hashedPassword = generateSHA512Hash(password, salt);
+                    if (userTable.Rows[i][3].ToString() == hashedPassword)
                     {
                         passValid = true;
                         Session["userID"] = userTable.Rows[i][0].ToString();
@@ -78,13 +81,13 @@ namespace studyRoom
             bool emailFound = false;
             bool isInvalid = false;
             bool passwordSame = false;
+
+            LoadUsers();
             
             if (fName.Value == "" || lName.Value == "" || emailReg.Value == "" || phone.Value == "" || passwordReg.Value == "" || passwordConfirm.Value == "")
             {
                 isInvalid = true;
-            }
-
-            LoadUsers();
+            }            
 
             for (int i = 0; i < userTable.Rows.Count; i++ )
             {
@@ -113,7 +116,7 @@ namespace studyRoom
 
             }
 
-            if (!isInvalid && !emailFound)
+            if (!isInvalid && !emailFound && passwordSame)
             {
                 addUser();
             }
@@ -155,7 +158,7 @@ namespace studyRoom
             String hashedPassword = generateSHA512Hash(passwordConfirm.Value, salt);
 
             studyRoomCN.Open();
-            string sql = "INSERT INTO users (fName, lName, email, phone, saltHash, password) VALUES (@fName, @lName, @email, @phone, @saltHast, @password)";
+            string sql = "INSERT INTO users (fName, lName, email, phone, saltHash, password) VALUES (@fName, @lName, @email, @phone, @saltHash, @password)";
             using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
             {
                 // set up all parameters
@@ -184,6 +187,7 @@ namespace studyRoom
         protected void registerBtn_Click(object sender, EventArgs e)
         {
             registerUser();
+            loginError.InnerHtml = "<p class='alert alert-success'>You are registered! Please login to book a room!</p>";
         }
     }
 }
