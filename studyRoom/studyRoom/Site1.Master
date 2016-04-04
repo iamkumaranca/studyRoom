@@ -125,7 +125,6 @@
     <script src="./__assets/__js/icheck/icheck.min.js"></script>
     <!-- daterangepicker -->
     <script src="./__assets/__js/moment/moment.min.js"></script>
-    <script src="./__assets/__js/datepicker/daterangepicker.js"></script>
 
     <script src="./__assets/__js/custom.js"></script>
 
