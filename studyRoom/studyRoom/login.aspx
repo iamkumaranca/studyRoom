@@ -72,6 +72,7 @@
             <div id="register" class="animate form">
                 <section class="login_content">
                     <h1>Create Account</h1>
+                    <div runat="server" id="registerError"></div>
                     <div>
                         <input type="text" id="fName" class="form-control" placeholder="First Name" runat="server" />
                     </div>
@@ -91,7 +92,7 @@
                         <input type="password" id="passwordConfirm" class="form-control" placeholder="Confirm Password" runat="server" />
                     </div>
                     <div>
-                        <button class="btn btn-default submit" id="registerBtn">Register</button>
+                        <asp:Button ID="registerBtn" runat="server" CssClass="btn btn-default submit" Text="register" OnClick="registerBtn_Click" />
                     </div>
                     <div class="clearfix"></div>
                     <div class="separator">
