@@ -46,12 +46,14 @@
                 <section class="login_content">
                     <h1>Login Form</h1>
                     <div runat="server" id="loginError"></div>
-                    <div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="email" id="emailLogin" class="form-control" placeholder="Email" runat="server" />
-                    </div><br />
-                    <div>
+                        <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="password" id="passwordLogin" class="form-control" placeholder="Password" runat="server" />
-                    </div><br />
+                        <span class="fa fa-key form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
                     <div>
                         <asp:Button ID="loginBtn" runat="server" CssClass="btn btn-default submit" Text="Log in" OnClick="loginBtn_Click" />
                     </div>
@@ -73,26 +75,32 @@
                 <section class="login_content">
                     <h1>Create Account</h1>
                     <div runat="server" id="registerError"></div>
-                    <div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="text" id="fName" class="form-control" placeholder="First Name" runat="server" />
-                    </div>
-                    <div>
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="text" id="lName" class="form-control" placeholder="Last Name" runat="server" />
-                    </div>
-                    <div>
+                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="email" id="emailReg" class="form-control" placeholder="Email" runat="server" />
-                    </div>
-                    <div>
+                        <span class="fa fa-envelope form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="text" id="phone" class="form-control" placeholder="Phone" runat="server" />
-                    </div>
-                    <div>
+                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="password" id="passwordReg" class="form-control" placeholder="Password" runat="server" />
-                    </div>
-                    <div>
+                        <span class="fa fa-key form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <input type="password" id="passwordConfirm" class="form-control" placeholder="Confirm Password" runat="server" />
-                    </div>
+                        <span class="fa fa-key form-control-feedback right" aria-hidden="true"></span>
+                    </div><br /><br /><br />
                     <div>
-                        <asp:Button ID="registerBtn" runat="server" CssClass="btn btn-default submit" Text="register" OnClick="registerBtn_Click" />
+                        <asp:Button ID="registerBtn" runat="server" CssClass="btn btn-default submit" Text="Register" OnClick="registerBtn_Click" />
                     </div>
                     <div class="clearfix"></div>
                     <div class="separator">
@@ -111,5 +119,18 @@
         </div>
     </div>
     </form>
+    <script src="./__assets/__js/bootstrap.min.js"></script>
+
+    <!-- bootstrap progress js -->
+    <script src="./__assets/__js/progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="./__assets/__js/nicescroll/jquery.nicescroll.min.js"></script>
+
+    <!-- icheck -->
+    <script src="./__assets/__js/icheck/icheck.min.js"></script>
+
+    <!-- pace -->
+    <script src="./__assets/__js/pace/pace.min.js"></script>
+    <script src="./__assets/__js/custom.js"></script>
+
 </body>
 </html>

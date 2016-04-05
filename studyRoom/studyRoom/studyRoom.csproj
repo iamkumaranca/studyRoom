@@ -119,6 +119,7 @@
     <Content Include="__assets\__js\nprogress.js" />
     <Content Include="__assets\__js\pace\pace.min.js" />
     <Content Include="__assets\__js\progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="__assets\__js\validator\validator.js" />
     <Content Include="__assets\__less\custom.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
