@@ -188,7 +188,7 @@ namespace studyRoom
             else if (passMatch == "na")
             {
                 string userID = (string)Session["userID"];
-                //studyRoomCN.Close();
+                // studyRoomCN.Close();
                 studyRoomCN.Open();
                 string sql = "UPDATE users SET fName = @fName, lName = @lName, email = @email, phone = @phone WHERE userID = @userID";
                 using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
