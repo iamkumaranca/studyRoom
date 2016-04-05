@@ -24,7 +24,6 @@ namespace studyRoom
             {
                 LoadUsers();
             }
-
         }
 
         protected void LoadUsers()
@@ -58,7 +57,6 @@ namespace studyRoom
                 if(userTable.Rows[i][1].ToString() == email)
                 {
                     emailValid = true;
-                    Response.Write("<script>alert('Email VALID');</script>");
                     String salt = userTable.Rows[i][2].ToString();
                     String hashedPassword = generateSHA512Hash(password, salt);
                     if (userTable.Rows[i][3].ToString() == hashedPassword)

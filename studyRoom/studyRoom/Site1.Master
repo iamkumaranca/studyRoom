@@ -87,9 +87,9 @@
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="">
+                            <li>
                                 <a class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="./__assets/__images/img.jpg" alt="">John Doe
+                                    <img src="./__assets/__images/img.jpg" alt=""><span id="userName" runat="server"></span>
                                 </a>
                             </li>
                         </ul>

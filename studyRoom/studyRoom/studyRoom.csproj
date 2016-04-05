@@ -73,6 +73,9 @@
     <Content Include="__assets\__css\animate.min.css" />
     <Content Include="__assets\__css\bootstrap.min.css" />
     <Content Include="__assets\__css\custom.css" />
+    <Content Include="__assets\__css\icheck\flat\green%402x.png" />
+    <Content Include="__assets\__css\icheck\flat\green.css" />
+    <Content Include="__assets\__css\icheck\flat\green.png" />
     <Content Include="__assets\__fonts\css\font-awesome.css" />
     <Content Include="__assets\__fonts\css\font-awesome.min.css" />
     <Content Include="__assets\__fonts\fonts\fontawesome-webfont.svg" />
