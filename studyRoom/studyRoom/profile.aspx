@@ -42,13 +42,13 @@
                             <div class="item form-group">
                                 <label for="currentPassword" class="control-label col-md-2 col-sm-2 col-xs-12">Current Password <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="currentPassword" type="password" name="currentPassword" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required" placeholder="Current Password" runat="server">
+                                    <input id="currentPassword" type="password" name="currentPassword" class="form-control col-md-7 col-xs-12" required="required" placeholder="Current Password" runat="server">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <label for="password1" class="control-label col-md-2 col-sm-2 col-xs-12">New Password</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input id="password1" type="password" name="password1" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" placeholder="New Password" runat="server">
+                                    <input id="password1" type="password" name="password1" class="form-control col-md-7 col-xs-12" placeholder="New Password" runat="server">
                                 </div>
                             </div>
                             <div class="item form-group">

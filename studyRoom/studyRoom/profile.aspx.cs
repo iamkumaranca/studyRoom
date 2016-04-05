@@ -198,7 +198,7 @@ namespace studyRoom
                     cmd.Parameters.Add("@fName", SqlDbType.VarChar);
                     cmd.Parameters["@fName"].Value = fname;
                     cmd.Parameters.Add("@lName", SqlDbType.VarChar);
-                    cmd.Parameters["@lName"].Value = fname;
+                    cmd.Parameters["@lName"].Value = lname;
                     cmd.Parameters.Add("@email", SqlDbType.VarChar);
                     cmd.Parameters["@email"].Value = email;
                     cmd.Parameters.Add("@phone", SqlDbType.VarChar);
