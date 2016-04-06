@@ -12,6 +12,21 @@
                     </div>
                     <div class="x_content">
                         <form class="form-horizontal form-label-left" novalidate runat="server">
+                            <table class="table table-striped responsive-utilities jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th class="column-title">Booking Date </th>
+                                        <th class="column-title">Start Time </th>
+                                        <th class="column-title">End Time </th>
+                                        <th class="column-title">Room Number </th>
+                                        <th class="column-title">Campus </th>
+                                        <th class="column-title">Maximum Capacity </th>
+                                        <th class="column-title no-link last"><span class="nobr">Cancel</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookingTable" runat="server">
+                                </tbody>
+                            </table>
                         </form>
                     </div>
                 </div>
