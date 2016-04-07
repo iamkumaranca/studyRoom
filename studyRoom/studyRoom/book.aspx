@@ -42,8 +42,9 @@
                                     <h2 class="StepTitle">Step 1 Select a date</h2>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <asp:TextBox ID="bookDate" CssClass="form-control has-feedback-left col-md-7 col-xs-12" runat="server" OnTextChanged="startTime_SelectedIndexChanged" AutoPostBack="true"></asp:TextBox>
-                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <!--<asp:TextBox ID="bookDate" CssClass="form-control has-feedback-left col-md-7 col-xs-12" runat="server" OnTextChanged="startTime_SelectedIndexChanged" AutoPostBack="true"></asp:TextBox>-->
+                                            <asp:DropDownList ID="bookingDate" CssClass="form-control col-md-7 col-xs-12" runat="server"></asp:DropDownList>
+                                            <!--<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>-->
                                         </div>
                                     </div>
                                 </div>

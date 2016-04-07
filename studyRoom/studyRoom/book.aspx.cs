@@ -22,7 +22,20 @@ namespace studyRoom
 
             if (!IsPostBack)
             {
+                LoadDates();
                 LoadRoomsAvailable();
+
+            }
+        }
+
+        protected void LoadDates()
+        {
+            var today = DateTime.Today;
+
+            for(int i=0; i<7; i++)
+            {
+                bookingDate.Items.Add(new ListItem(today.ToString("yyyy-MM-dd")));
+                today = today.AddDays(1);
             }
         }
 
@@ -39,17 +52,8 @@ namespace studyRoom
                             ")";
             using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
             {
-                string bookingDate;
-                if(bookDate.Text == "")
-                {
-                    bookingDate = DateTime.Now.ToString("MM-dd-yyyy");
-                }
-                else
-                {
-                    bookingDate = bookDate.Text;
-                }
-                //DateTime date = bookDate.Text.ToString("yyyy-MM-DD");
-                cmd.Parameters.Add("@bookingDate", SqlDbType.Date).Value = bookingDate;
+
+                cmd.Parameters.Add("@bookingDate", SqlDbType.Date).Value = bookingDate.SelectedValue;
                 cmd.Parameters.Add("@startTime", SqlDbType.Time).Value = startTime.SelectedValue;
                 cmd.Parameters.Add("@timeRange", SqlDbType.Int).Value = bookingDuration.SelectedValue;
 
@@ -80,18 +84,9 @@ namespace studyRoom
                 string sql = "INSERT INTO booking (bookingDate, startTime, endTime, roomID, userID) VALUES (@date, @checkIn, DATEADD(minute, @timeRange, @checkIn), @roomID, @userID)";
                 using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
                 {
-                    string bookingDate;
                     string userID = (string)Session["userID"];
-                    if (bookDate.Text == "")
-                    {
-                        bookingDate = DateTime.Now.ToString("yyyy-MM-dd");
-                    }
-                    else
-                    {
-                        bookingDate = bookDate.Text;
-                    }
                     // set up all parameters
-                    cmd.Parameters.Add("@date", SqlDbType.Date).Value = bookingDate;
+                    cmd.Parameters.Add("@date", SqlDbType.Date).Value = bookingDate.SelectedValue;
                     cmd.Parameters.Add("@checkIn", SqlDbType.Time).Value = startTime.SelectedValue;
                     //Reference to getCheckoutTime() Method which will add minutes to Time
                     cmd.Parameters.Add("@timeRange", SqlDbType.Int).Value = bookingDuration.SelectedValue;
