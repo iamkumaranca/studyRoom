@@ -27,11 +27,15 @@ namespace studyRoom
 
         protected void LoadBookingsTable()
         {
+            //Clear Data
+            bookingTableGV.DataSource = null;
+            bookingTableGV.DataBind();
+
             studyRoomCN.Open();
             string userID = (string)Session["userID"];
             DataTable roomTable = new DataTable();
             roomTable.Clear();
-            string sql = "SELECT bookingID, CONVERT(VARCHAR(12), bookingDate, 107), CONVERT(VARCHAR(5), startTime,108), CONVERT(VARCHAR(5), endTime,108), roomNum, roomLoc, roomCap FROM booking, rooms WHERE booking.roomID = rooms.roomID AND userID = @userID ORDER BY bookingDate, startTime, roomNum";
+            string sql = "SELECT CONVERT(VARCHAR(12), bookingDate, 107) AS 'Booking Date', CONVERT(VARCHAR(5), startTime,108) AS 'Start Time', CONVERT(VARCHAR(5), endTime,108) AS 'End Time', roomNum AS 'Room Number', roomLoc AS Campus, roomCap AS 'Room Capacity' FROM booking, rooms WHERE booking.roomID = rooms.roomID AND userID = @userID ORDER BY bookingDate, startTime, roomNum";
             using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
             {
                 cmd.Parameters.Add("@userID", SqlDbType.VarChar);
@@ -43,39 +47,38 @@ namespace studyRoom
             }
             studyRoomCN.Close();
 
-            string bookingRow = "";
-
-            for (int i = 0; i < roomTable.Rows.Count; i++)
-            {
-                bookingRow += "<tr class='even pointer'> " +
-                                   "<td>" + roomTable.Rows[i][1].ToString() + "</td>" +
-                                   "<td>" + roomTable.Rows[i][2].ToString() + "</td>" +
-                                   "<td>" + roomTable.Rows[i][3].ToString() + "</td>" +
-                                   "<td>" + roomTable.Rows[i][4].ToString() + "</td>" +
-                                   "<td>" + roomTable.Rows[i][5].ToString() + "</td>" +
-                                   "<td>" + roomTable.Rows[i][6].ToString() + "</td>" +
-                                   "<td class='last'><a href='#'>Cancel</a></td>" +
-                                   "</tr>";
-            }
-            bookingTable.InnerHtml = bookingRow;
+            bookingTableGV.DataSource = roomTable;
+            bookingTableGV.DataBind();
         }
 
-        protected void LoadBookings()
+        protected void BookingsGV_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            LoadBookingsTable();
-
-            for (int i = 0; i < roomTable.Rows.Count; i++)
+            studyRoomCN.Open();
+            try
             {
-                bookingTable.InnerHtml = "<tr class='even pointer'> " +
-                                         "<td>" + roomTable.Rows[0][1].ToString() + "</td>" +
-                                         "<td>" + roomTable.Rows[0][2].ToString() + "</td>" +
-                                         "<td>" + roomTable.Rows[0][3].ToString() + "</td>" +
-                                         "<td>" + roomTable.Rows[0][4].ToString() + "</td>" +
-                                         "<td>" + roomTable.Rows[0][5].ToString() + "</td>" +
-                                         "<td>" + roomTable.Rows[0][6].ToString() + "</td>" +
-                                         "<td class='last'><a href='#'>Cancel</a></td>" +
-                                         "</tr>";
+                //Source: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/afcfb8bc-c0bb-45b1-b02b-2c19eef8aeff/how-to-write-sql-delete-script-with-rownumber?forum=transactsql
+                string sql = "WITH cte AS ( SELECT *,row_number() over(order by bookingDate) AS row_number FROM booking WHERE userID = @userID ) DELETE FROM cte WHERE row_number = @row";
+                using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
+                {
+                    Response.Write("<script>alert('"+ e.RowIndex +"');</script>");
+                    string userID = (string)Session["userID"];
+                    cmd.Parameters.Add("@userID", SqlDbType.VarChar).Value = userID;
+                    //Correction: e.RowIndex begins from 0.
+                    cmd.Parameters.Add("@row", SqlDbType.VarChar).Value = e.RowIndex + 1;
+                    cmd.ExecuteNonQuery();
+                }
+                studyRoomCN.Close();
+
+                //Refresh the GridView after Deleting
+                LoadBookingsTable();
+
             }
+            catch (Exception ex)
+            {
+                Response.Write(ex);
+            }
+
+
         }
     }
 }

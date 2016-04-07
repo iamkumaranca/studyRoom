@@ -63,7 +63,7 @@ namespace studyRoom
                     {
                         passValid = true;
                         Session["userID"] = userTable.Rows[i][0].ToString();
-                        Response.Redirect("index.aspx");
+                        Response.Redirect("book.aspx");
                     }
                 }
             }
