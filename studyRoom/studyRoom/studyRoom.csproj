@@ -61,10 +61,12 @@
       <DependentUpon>studyRoom.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\studyRoom.mdf" />
+    <Content Include="App_Data\studyRoom_log.ldf">
+      <DependentUpon>studyRoom.mdf</DependentUpon>
+    </Content>
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="Site1.Master" />
-    <Content Include="index.aspx" />
     <Content Include="book.aspx" />
     <Content Include="bookings.aspx" />
     <Content Include="profile.aspx" />
@@ -76,6 +78,9 @@
     <Content Include="__assets\__css\icheck\flat\green%402x.png" />
     <Content Include="__assets\__css\icheck\flat\green.css" />
     <Content Include="__assets\__css\icheck\flat\green.png" />
+    <Content Include="__assets\__css\ion.rangeSlider.css" />
+    <Content Include="__assets\__css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="__assets\__css\normalize.css" />
     <Content Include="__assets\__fonts\css\font-awesome.css" />
     <Content Include="__assets\__fonts\css\font-awesome.min.css" />
     <Content Include="__assets\__fonts\fonts\fontawesome-webfont.svg" />
@@ -112,7 +117,9 @@
     <Content Include="__assets\__images\visa.png" />
     <Content Include="__assets\__js\bootstrap.min.js" />
     <Content Include="__assets\__js\custom.js" />
+    <Content Include="__assets\__js\datepicker\daterangepicker.js" />
     <Content Include="__assets\__js\icheck\icheck.min.js" />
+    <Content Include="__assets\__js\ion_range\ion.rangeSlider.min.js" />
     <Content Include="__assets\__js\jquery.min.js" />
     <Content Include="__assets\__js\moment\moment.min.js" />
     <Content Include="__assets\__js\nicescroll\jquery.nicescroll.min.js" />
@@ -120,6 +127,7 @@
     <Content Include="__assets\__js\pace\pace.min.js" />
     <Content Include="__assets\__js\progressbar\bootstrap-progressbar.min.js" />
     <Content Include="__assets\__js\validator\validator.js" />
+    <Content Include="__assets\__js\wizard\jquery.smartWizard.js" />
     <Content Include="__assets\__less\custom.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -162,13 +170,6 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="book.aspx.cs">
       <DependentUpon>book.aspx</DependentUpon>

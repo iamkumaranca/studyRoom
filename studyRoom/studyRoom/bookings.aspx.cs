@@ -22,7 +22,6 @@ namespace studyRoom
             if (!IsPostBack)
             {
                 LoadBookingsTable();
-                //LoadBookings();
             }
         }
 
@@ -32,7 +31,7 @@ namespace studyRoom
             string userID = (string)Session["userID"];
             DataTable roomTable = new DataTable();
             roomTable.Clear();
-            string sql = "SELECT bookingID, CONVERT(VARCHAR(12), bookingDate, 107), CONVERT(VARCHAR(5), startTime,108), CONVERT(VARCHAR(5), endTime,108), roomNum, roomLoc, roomCap FROM booking, rooms WHERE booking.roomID = rooms.roomID AND userID = @userID ORDER BY bookingDate";
+            string sql = "SELECT bookingID, CONVERT(VARCHAR(12), bookingDate, 107), CONVERT(VARCHAR(5), startTime,108), CONVERT(VARCHAR(5), endTime,108), roomNum, roomLoc, roomCap FROM booking, rooms WHERE booking.roomID = rooms.roomID AND userID = @userID ORDER BY bookingDate, startTime, roomNum";
             using (SqlCommand cmd = new SqlCommand(sql, studyRoomCN))
             {
                 cmd.Parameters.Add("@userID", SqlDbType.VarChar);

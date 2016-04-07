@@ -127,6 +127,8 @@
     <!-- pace -->
     <script src="./__assets/__js/pace/pace.min.js"></script>
 
+    <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+
     <!-- /footer content -->
 </body>
 </html>
